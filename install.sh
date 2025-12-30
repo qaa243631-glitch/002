@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# --- CONFIGURATION ---
+# --- MAIN CONFIGURATION ---
 LOG_FILE="/var/log/vps_setup.log"
 # USER_EMAIL="admin@$(hostname)"
 USER_EMAIL="realmarkdean@outlook.com"
