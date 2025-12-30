@@ -80,3 +80,22 @@ The script will log its progress to `/var/log/vps_setup.log`. If any errors occu
 ## After Installation
 
 Once the script completes, you can access your HestiaCP control panel by navigating to `https://your_server_ip:8083` in your web browser. Use `admin` as the username and the password you set in the `ADMIN_PASSWORD` variable.
+
+## GitHub Push Instructions
+
+To push this local repository to a new remote GitHub repository, follow these steps:
+
+1.  **Create a new empty repository on GitHub.** Do not initialize it with a README, .gitignore, or license.
+
+2.  **Run the following commands in your terminal** (replace `YOUR_USERNAME` and `YOUR_REPO_NAME` with your actual details):
+
+    ```bash
+    git init
+    git add .
+    git commit -m "Initial commit"
+    git branch -M main
+    <!-- git remote add origin https://github.com//YOUR_REPO_NAME.git -->
+    git remote add origin https://github.com/qaa243631-glitch/003.git
+
+    git push -u origin main
+    ```
