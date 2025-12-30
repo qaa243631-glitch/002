@@ -1,11 +1,9 @@
 #!/bin/bash
-
 # --- MAIN CONFIGURATION ---
 LOG_FILE="/var/log/vps_setup.log"
 # USER_EMAIL="admin@$(hostname)"
 USER_EMAIL="realmarkdean@outlook.com"
 ADMIN_PASSWORD="YourSecurePassword123" # Change this!
-
 # --- HELPERS ---
 echo_info() { echo -e "\e[34m[INFO]\e[0m $1"; }
 echo_error() { echo -e "\e[31m[ERROR]\e[0m $1" >&2; }
