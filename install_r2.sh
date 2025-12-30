@@ -31,6 +31,17 @@ set -euo pipefail
 echo_info "Updating system packages..."
 apt update && apt upgrade -y
 
+# 1.1 Set Hostname
+if [ "$(hostname)" != "$HOSTNAME_FQDN" ]; then
+    echo_info "Setting hostname to $HOSTNAME_FQDN..."
+    hostnamectl set-hostname "$HOSTNAME_FQDN"
+    
+    # Update /etc/hosts to prevent sudo warnings
+    if ! grep -q "$HOSTNAME_FQDN" /etc/hosts; then
+        echo "127.0.1.1 $HOSTNAME_FQDN $(echo "$HOSTNAME_FQDN" | cut -d. -f1)" >> /etc/hosts
+    fi
+fi
+
 # 2. Install Dependencies
 echo_info "Installing build essentials and libs..."
 apt install -y build-essential curl git python3-pip python3-venv libpq-dev
