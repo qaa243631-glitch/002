@@ -3,6 +3,7 @@
 LOG_FILE="/var/log/vps_setup.log"
 # USER_EMAIL="admin@$(hostname)"
 USER_EMAIL="realmarkdean@outlook.com"
+HOSTNAME_FQDN="vps.example.com" # Change this to your FQDN!
 ADMIN_PASSWORD="YourSecurePassword123" # Change this!
 # --- HELPERS ---
 echo_info() { echo -e "\e[34m[INFO]\e[0m $1"; }
@@ -55,7 +56,7 @@ if [ ! -d "/usr/local/hestia" ]; then
     echo_info "Starting HestiaCP installation (this will take a few minutes)..."
     bash hst-install.sh --apache no --phpfpm yes --multiphp no --vsftpd yes --proftpd no \
     --named yes --mysql no --postgresql yes --exim yes --dovecot yes --clamav no \
-    --spamassassin no --iptables yes --fail2ban yes --quota no --api yes \
+    --spamassassin no --iptables yes --faiHOSTNAME_FQDN--quota no --api yes \
     --force --interactive no --hostname "$(hostname)" --email "$USER_EMAIL" --password "$ADMIN_PASSWORD"
 else
     echo_info "HestiaCP is already installed. Skipping."
